@@ -14,7 +14,7 @@ services:
   web:
     container_name: main-app-test
     build: .
-    command: bash -c "python manage.py migrate && python manage.py runserver 0.0.0.0:8002"
+    command: bash -c "python manage.py makemigrations && python manage.py migrate && python manage.py runserver 0.0.0.0:8002"
     volumes:
       - ./app:/code
     ports:
